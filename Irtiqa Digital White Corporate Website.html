@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Irtiqa Digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#ffffff;
+      color:#0f172a;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1280px;
+      margin:auto;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar{
+      height:90px;
+      border-bottom:1px solid #e5e7eb;
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(12px);
+      z-index:1000;
+    }
+
+    .nav-inner{
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo img{
+      height:42px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:42px;
+    }
+
+    .nav-links a{
+      font-size:15px;
+      font-weight:500;
+      color:#334155;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#2563eb;
+    }
+
+    .nav-btn{
+      background:#1d4ed8;
+      color:white;
+      padding:14px 24px;
+      border-radius:14px;
+      font-size:14px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .nav-btn:hover{
+      background:#1e40af;
+      transform:translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      padding:80px 0 110px;
+      overflow:hidden;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1.1fr;
+      align-items:center;
+      gap:70px;
+    }
+
+    .hero-subtitle{
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:#2563eb;
+      margin-bottom:24px;
+    }
+
+    .hero h1{
+      font-size:72px;
+      line-height:1.04;
+      font-weight:800;
+      margin-bottom:28px;
+      color:#0f172a;
+    }
+
+    .hero h1 span{
+      color:#1d4ed8;
+    }
+
+    .hero p{
+      font-size:18px;
+      line-height:1.9;
+      color:#64748b;
+      max-width:620px;
+      margin-bottom:42px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:18px;
+    }
+
+    .primary-btn{
+      background:#1d4ed8;
+      color:white;
+      padding:18px 30px;
+      border-radius:16px;
+      font-size:15px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .primary-btn:hover{
+      background:#1e40af;
+      transform:translateY(-2px);
+    }
+
+    .secondary-btn{
+      border:1px solid #dbe3ef;
+      color:#0f172a;
+      padding:18px 30px;
+      border-radius:16px;
+      font-size:15px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .secondary-btn:hover{
+      border-color:#2563eb;
+      color:#2563eb;
+    }
+
+    .hero-image{
+      position:relative;
+      height:720px;
+      overflow:hidden;
+      border-radius:60px;
+
+      /* SLOPE EFFECT */
+      clip-path:polygon(18% 0%,100% 0%,100% 100%,0% 100%);
+    }
+
+    .hero-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section{
+      padding:110px 0;
+    }
+
+    .section-subtitle{
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:#2563eb;
+      margin-bottom:18px;
+    }
+
+    .section-title{
+      font-size:52px;
+      line-height:1.15;
+      font-weight:800;
+      color:#0f172a;
+      margin-bottom:26px;
+    }
+
+    .section-description{
+      max-width:760px;
+      font-size:18px;
+      line-height:1.9;
+      color:#64748b;
+    }
+
+    /* =========================
+       SERVICES
+    ========================== */
+
+    .services-grid{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:24px;
+    }
+
+    .service-card{
+      border:1px solid #e5e7eb;
+      border-radius:30px;
+      padding:38px 28px;
+      transition:0.35s;
+      background:white;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+      border-color:#bfdbfe;
+      box-shadow:0 20px 50px rgba(0,0,0,0.06);
+    }
+
+    .service-icon{
+      width:52px;
+      margin-bottom:28px;
+    }
+
+    .service-card h3{
+      font-size:24px;
+      line-height:1.35;
+      margin-bottom:18px;
+      color:#0f172a;
+    }
+
+    .service-card p{
+      font-size:15px;
+      line-height:1.85;
+      color:#64748b;
+      margin-bottom:24px;
+    }
+
+    .learn-more{
+      font-size:14px;
+      font-weight:600;
+      color:#2563eb;
+    }
+
+    /* =========================
+       WHY US
+    ========================== */
+
+    .why-wrapper{
+      background:linear-gradient(to bottom right,#f8fbff,#f1f5f9);
+      border-radius:50px;
+      padding:80px;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:1fr 1.4fr;
+      gap:60px;
+      align-items:flex-start;
+    }
+
+    .why-left p{
+      margin-top:24px;
+      color:#64748b;
+      line-height:1.9;
+      font-size:17px;
+    }
+
+    .why-cards{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px;
+    }
+
+    .why-card{
+      background:white;
+      border-radius:26px;
+      padding:30px;
+      border:1px solid #e5e7eb;
+      transition:0.3s;
+    }
+
+    .why-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 16px 40px rgba(0,0,0,0.05);
+    }
+
+    .why-card h4{
+      font-size:20px;
+      margin-bottom:14px;
+    }
+
+    .why-card p{
+      color:#64748b;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    /* =========================
+       INDUSTRIES
+    ========================== */
+
+    .industries-grid{
+      margin-top:60px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
+    }
+
+    .industry-card{
+      border:1px solid #e5e7eb;
+      border-radius:28px;
+      padding:40px 28px;
+      transition:0.35s;
+      text-align:center;
+      background:white;
+    }
+
+    .industry-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 18px 40px rgba(0,0,0,0.05);
+    }
+
+    .industry-card h3{
+      margin-top:18px;
+      font-size:22px;
+      margin-bottom:14px;
+    }
+
+    .industry-card p{
+      color:#64748b;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-wrapper{
+      background:linear-gradient(to bottom right,#f8fbff,#eff6ff);
+      border-radius:50px;
+      padding:90px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .contact-info p{
+      margin-top:24px;
+      color:#64748b;
+      line-height:1.9;
+      font-size:17px;
+    }
+
+    .contact-items{
+      margin-top:40px;
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+    }
+
+    .contact-item{
+      background:white;
+      border-radius:24px;
+      padding:26px;
+      border:1px solid #e5e7eb;
+    }
+
+    .contact-item h4{
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .contact-item span{
+      color:#64748b;
+      line-height:1.8;
+    }
+
+    .contact-form{
+      background:white;
+      border-radius:34px;
+      padding:42px;
+      border:1px solid #e5e7eb;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:18px 20px;
+      margin-bottom:18px;
+      border:1px solid #dbe3ef;
+      border-radius:16px;
+      font-size:15px;
+      font-family:inherit;
+    }
+
+    .contact-form textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
+    .contact-form button{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:16px;
+      background:#1d4ed8;
+      color:white;
+      font-size:15px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .contact-form button:hover{
+      background:#1e40af;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      border-top:1px solid #e5e7eb;
+      padding:40px 0;
+      margin-top:100px;
+    }
+
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:24px;
+      color:#64748b;
+      font-size:14px;
+    }
+
+    .footer-copy{
+      color:#94a3b8;
+      font-size:14px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:1200px){
+
+      .services-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .industries-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
+    @media(max-width:900px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero-grid,
+      .why-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:52px;
+      }
+
+      .hero-image{
+        height:500px;
+      }
+
+      .why-cards,
+      .industries-grid,
+      .services-grid{
+        grid-template-columns:1fr;
+      }
+
+      .contact-wrapper,
+      .why-wrapper{
+        padding:40px;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .section-title{
+        font-size:38px;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .primary-btn,
+      .secondary-btn{
+        width:100%;
+        text-align:center;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <div class="navbar">
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">
+        <img src="assets/logo.png" alt="Irtiqa Digital">
+      </a>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+
+      <a href="#contact" class="nav-btn">
+        Let's Talk
+      </a>
+
+    </div>
+  </div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="hero-subtitle">
+          Smart Solutions. Stronger Futures.
+        </div>
+
+        <h1>
+          Accelerating Digital Transformation with <span>Smart IT Solutions</span>
+        </h1>
+
+        <p>
+          Irtiqa Digital helps businesses accelerate digital transformation through smart enterprise solutions, infrastructure consultancy, cybersecurity services, and strategic technology partnerships.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#services" class="primary-btn">
+            Explore Solutions
+          </a>
+
+          <a href="#about" class="secondary-btn">
+            Learn More
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/hero.png" alt="Irtiqa Hero">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-subtitle">
+        Our Services
+      </div>
+
+      <h2 class="section-title">
+        End-to-End IT Solutions Tailored for Modern Businesses
+      </h2>
+
+      <p class="section-description">
+        We provide comprehensive technology solutions and consultancy services designed to optimize operations, strengthen security, and support long-term digital growth.
+      </p>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+
+          <img src="assets/enterprise.png" class="service-icon">
+
+          <h3>Enterprise Solutions</h3>
+
+          <p>
+            ERP implementation and integration to streamline processes and optimize business performance.
+          </p>
+
+          <a href="#" class="learn-more">
+            Learn More →
+          </a>
+
+        </div>
+
+        <div class="service-card">
+
+          <img src="assets/infrastructure.png" class="service-icon">
+
+          <h3>Infrastructure Consultancy</h3>
+
+          <p>
+            Expert advice on IT infrastructure, cloud architecture, networking, and system optimization.
+          </p>
+
+          <a href="#" class="learn-more">
+            Learn More →
+          </a>
+
+        </div>
+
+        <div class="service-card">
+
+          <img src="assets/cybersecurity.png" class="service-icon">
+
+          <h3>Cybersecurity Advisory</h3>
+
+          <p>
+            Protect your business with risk assessment, security frameworks, and advanced cybersecurity solutions.
+          </p>
+
+          <a href="#" class="learn-more">
+            Learn More →
+          </a>
+
+        </div>
+
+        <div class="service-card">
+
+          <img src="assets/facilities.png" class="service-icon">
+
+          <h3>Facilities Management</h3>
+
+          <p>
+            Technology-driven facilities management to ensure efficient and reliable operations.
+          </p>
+
+          <a href="#" class="learn-more">
+            Learn More →
+          </a>
+
+        </div>
+
+        <div class="service-card">
+
+          <img src="assets/partnership.png" class="service-icon">
+
+          <h3>Project Referral & Brokering</h3>
+
+          <p>
+            Connecting opportunities and delivering value across business ecosystems through partnerships.
+          </p>
+
+          <a href="#" class="learn-more">
+            Learn More →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY CHOOSE US -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="why-wrapper">
+
+        <div class="why-grid">
+
+          <div class="why-left">
+
+            <div class="section-subtitle">
+              Why Choose Us
+            </div>
+
+            <h2 class="section-title">
+              We Combine Technology, Expertise, and Commitment
+            </h2>
+
+            <p>
+              We don’t just deliver solutions — we build long-term partnerships that help your business grow, secure, and stay ahead in the digital era.
+            </p>
+
+          </div>
+
+          <div class="why-cards">
+
+            <div class="why-card">
+              <h4>Expert Team</h4>
+              <p>
+                Certified professionals with deep industry knowledge and technical expertise.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <h4>Tailored Solutions</h4>
+              <p>
+                Customized strategies designed to meet your unique business requirements.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <h4>Trusted Partnership</h4>
+              <p>
+                We work closely with clients to build reliable and sustainable growth.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <h4>Innovation Focused</h4>
+              <p>
+                Leveraging modern technologies to drive operational efficiency and transformation.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INDUSTRIES -->
+
+  <section id="industries">
+
+    <div class="container">
+
+      <div class="section-subtitle">
+        Industries We Serve
+      </div>
+
+      <h2 class="section-title">
+        Solutions for Every Industry
+      </h2>
+
+      <p class="section-description">
+        Our expertise spans across multiple industries, helping organizations modernize operations and accelerate digital transformation.
+      </p>
+
+      <div class="industries-grid">
+
+        <div class="industry-card">
+          <h3>Manufacturing</h3>
+          <p>
+            Smart infrastructure and ERP systems for industrial efficiency.
+          </p>
+        </div>
+
+        <div class="industry-card">
+          <h3>Healthcare</h3>
+          <p>
+            Secure and scalable digital solutions for healthcare operations.
+          </p>
+        </div>
+
+        <div class="industry-card">
+          <h3>Finance</h3>
+          <p>
+            Enterprise-grade cybersecurity and infrastructure consultancy.
+          </p>
+        </div>
+
+        <div class="industry-card">
+          <h3>Retail & Corporate</h3>
+          <p>
+            Technology solutions designed to optimize workflows and growth.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-wrapper">
+
+        <div class="contact-grid">
+
+          <div class="contact-info">
+
+            <div class="section-subtitle">
+              Contact Us
+            </div>
+
+            <h2 class="section-title">
+              Ready to Transform Your Business?
+            </h2>
+
+            <p>
+              Let’s discuss how Irtiqa Digital can help your organization achieve sustainable growth through secure and scalable IT solutions.
+            </p>
+
+            <div class="contact-items">
+
+              <div class="contact-item">
+                <h4>Email Us</h4>
+                <span>solutions@irtiqa.com</span>
+              </div>
+
+              <div class="contact-item">
+                <h4>Call Us</h4>
+                <span>+60 12-345 6789</span>
+              </div>
+
+              <div class="contact-item">
+                <h4>Visit Us</h4>
+                <span>Kuala Lumpur, Malaysia</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="contact-form">
+
+            <form>
+
+              <input type="text" placeholder="Your Name">
+
+              <input type="email" placeholder="Email Address">
+
+              <input type="text" placeholder="Company Name">
+
+              <textarea placeholder="How can we help you?"></textarea>
+
+              <button type="submit">
+                Send Message
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <img src="assets/logo.png" style="height:40px;">
+
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+
+      <div class="footer-copy">
+        © 2026 Irtiqa Digital. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
